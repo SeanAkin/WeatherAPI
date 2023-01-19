@@ -15,8 +15,8 @@ namespace WeatherAPI.Common.Automapper
                 .ForMember(dest => dest.Temperature, opt => opt.MapFrom(src => Math.Round(src.Main.Temp - 273.15, 2)))
                 .ForMember(dest => dest.Pressure, opt => opt.MapFrom(src => src.Main.Pressure))
                 .ForMember(dest => dest.Humidity, opt => opt.MapFrom(src => src.Main.Humidity))
-                .ForMember(dest => dest.Sunrise, opt => opt.MapFrom(src => src.Sys.Sunrise.ConvertToDateTime()))
-                .ForMember(dest => dest.Sunset, opt => opt.MapFrom(src => src.Sys.Sunset.ConvertToDateTime()));
+                .ForMember(dest => dest.Sunrise, opt => opt.MapFrom(src => src.Sys.Sunrise.ConverToDateTimeString()))
+                .ForMember(dest => dest.Sunset, opt => opt.MapFrom(src => src.Sys.Sunset.ConverToDateTimeString()));
         }
     }
 }

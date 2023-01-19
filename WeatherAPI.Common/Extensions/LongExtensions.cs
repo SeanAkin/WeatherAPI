@@ -7,7 +7,7 @@
         /// </summary>
         /// <param name="unix">Unix Timestamp</param>
         /// <returns>String</returns>
-        public static string ConvertToDateTime(this long unix)
+        public static string ConverToDateTimeString(this long unix)
         {
             DateTime baseDateTime = new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc);
             string dateTime = baseDateTime.AddSeconds(unix).ToString("dd/MM/yyyy HH:mm");
